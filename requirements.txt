@@ -60,7 +60,7 @@ requests==2.32.3
 requests-oauthlib==2.0.0
 rich==14.0.0
 rsa==4.9.1
-six @ file:///AppleInternal/Library/BuildRoots/c6f52eef-faa4-11ef-8a21-fe9e33ca05fa/Library/Caches/com.apple.xbs/Sources/python3/six-1.15.0-py2.py3-none-any.whl
+six==1.15.0
 sympy==1.13.3
 tensorboard==2.19.0
 tensorboard-data-server==0.7.2
