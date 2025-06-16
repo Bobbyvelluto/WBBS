@@ -14,7 +14,7 @@ filelock==3.18.0
 Flask==2.2.2
 flatbuffers==25.2.10
 fsspec==2025.3.2
-future @ file:///AppleInternal/Library/BuildRoots/c6f52eef-faa4-11ef-8a21-fe9e33ca05fa/Library/Caches/com.apple.xbs/Sources/python3/future-0.18.2-py3-none-any.whl
+future==0.18.2
 gast==0.4.0
 git-filter-repo==2.47.0
 google-auth==2.39.0
