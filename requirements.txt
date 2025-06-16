@@ -1,5 +1,4 @@
 absl-py==2.2.2
-altgraph @ file:///AppleInternal/Library/BuildRoots/c6f52eef-faa4-11ef-8a21-fe9e33ca05fa/Library/Caches/com.apple.xbs/Sources/python3/altgraph-0.17.2-py2.py3-none-any.whl
 astunparse==1.6.3
 attrs==25.3.0
 blinker==1.9.0
