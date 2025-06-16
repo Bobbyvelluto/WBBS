@@ -1,4 +1,5 @@
 absl-py==2.2.2
+altgraph==0.17.4
 astunparse==1.6.3
 attrs==25.3.0
 blinker==1.9.0
@@ -30,7 +31,7 @@ itsdangerous==2.2.0
 Jinja2==3.1.6
 keras==3.9.2
 libclang==18.1.1
-macholib @ file:///AppleInternal/Library/BuildRoots/c6f52eef-faa4-11ef-8a21-fe9e33ca05fa/Library/Caches/com.apple.xbs/Sources/python3/macholib-1.15.2-py2.py3-none-any.whl
+macholib==1.15.2
 Markdown==3.8
 markdown-it-py==3.0.0
 MarkupSafe==3.0.2
