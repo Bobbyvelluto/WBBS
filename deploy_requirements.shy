@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo "📦 Genero requirements.txt..."
+pip freeze > requirements.txt
+
+echo "📂 Git add..."
+git add -f requirements.txt
+
+echo "📝 Commit..."
+git commit -m "🚀 Aggiunto requirements.txt per deploy su Render"
+
+echo "⬆️ Push su GitHub..."
+git push origin main
+
+echo "✅ Fatto! Ora torna su https://render.com e clicca 'Manual Deploy → Deploy latest commit'"
+
+# (Opzionale) Apri il browser sul repo GitHub
+if command -v open &> /dev/null; then
+  open "https://github.com/Bobbyvelluto/wbbs"
+fi
+
