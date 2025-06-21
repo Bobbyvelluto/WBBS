@@ -63,7 +63,6 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 
-@app.route("/toggle_modulo/<int:modulo_id>", methods=["POST"], endpoint=x27toggle_modulox27)
 
 # Funzione temporanea — da sostituire con la logica reale
 def ottieni_stato(modulo_id):
@@ -85,3 +84,9 @@ def toggle_modulo(modulo_id):
 def index():
     return redirect('/dashboard')
 
+
+@app.route('/toggle_modulo/<int:modulo_id>', methods=['POST'], endpoint='toggle_modulo')
+def toggle_modulo(modulo_id):
+    # ✅ Placeholder di sopravvivenza. Inserisci qui la tua logica reale
+    print(f"[DEBUG] toggle_modulo per id={modulo_id}")
+    return redirect(request.referrer or url_for('dashboard'))
