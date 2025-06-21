@@ -70,3 +70,11 @@ def toggle_modulo(modulo_id):
     nuovo_stato = "attivo" if stato_attuale == "annullato" else "annullato"
     aggiorna_stato(modulo_id, nuovo_stato)
     return redirect(request.referrer)
+
+@app.route('/')
+def index():
+    return redirect('/dashboard')
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
