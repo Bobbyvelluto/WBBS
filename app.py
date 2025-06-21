@@ -69,6 +69,11 @@ if __name__ == "__main__":
 def ottieni_stato(modulo_id):
     return "attivo"
 
+
+# ✅ Funzione temporanea — da personalizzare se necessario
+def ottieni_stato(modulo_id):
+    return "attivo"
+
 def toggle_modulo(modulo_id):
     # TODO: personalizza queste due funzioni in base alla tua logica dati
     stato_attuale = ottieni_stato(modulo_id)
