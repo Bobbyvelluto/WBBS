@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ tess[1]|upper }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    @font-face {
+      font-family: 'FrontPageNeue';
+      src: url("{{ url_for('static', filename='FrontPageNeue.otf') }}");
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: url("{{ url_for('static', filename='main.jpg') }}") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'FrontPageNeue', sans-serif;
+      color: #fff;
+    }
+
+    .contenitore {
+      position: absolute;
+      bottom: 80px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 1rem;
+    }
+
+    .moduli {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .modulo {
+      width: 50px;
+      height: 50px;
+      background-color: #1e1e1e;
+      border: 2px solid #f57c00;
+      font-size: 1.6rem;
+      font-weight: bold;
+      border-radius: 6px;
+      text-align: center;
+      line-height: 50px;
+      color: #16d462;
+    }
+
+    .modulo.annullato {
+      background-color: #444;
+      border: 2px dashed #f57c00;
+      color: #aaa;
+    }
+
+    .studente-nome {
+      background-color: #5ca7d8;
+      border: 3px solid #5c0000;
+      padding: 0.8rem 2rem;
+      font-size: 3.2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      color: #f57c00;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      text-shadow: 1px 1px 0 #000, 2px 2px 2px rgba(0,0,0,0.5);
+    }
+
+    form { display: inline; }
+  </style>
+</head>
+<body>
+  <div class="contenitore">
+    <div class="moduli">
+      {% for m in moduli %}
+        {% if m[2] == "annullato" %}
+          <div class="modulo annullato">X</div>
+        {% else %}
+          <form action="{{ url_for('annulla_modulo', modulo_id=m[0]) }}" method="post">
+            <button type="submit" class="modulo">{{ m[1] }}</button>
+          </form>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="studente-nome">{{ tess[1]|upper }}</div>
+  </div>
+</body>
+</html>

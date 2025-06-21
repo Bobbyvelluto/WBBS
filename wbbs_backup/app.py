@@ -62,11 +62,3 @@ def elimina_tesserino(tesserino_id):
 if __name__ == "__main__":
     app.run(debug=True)
 
-
-@app.route("/toggle_modulo/<int:modulo_id>", methods=["POST"])
-def toggle_modulo(modulo_id):
-    # TODO: personalizza queste due funzioni in base alla tua logica dati
-    stato_attuale = ottieni_stato(modulo_id)
-    nuovo_stato = "attivo" if stato_attuale == "annullato" else "annullato"
-    aggiorna_stato(modulo_id, nuovo_stato)
-    return redirect(request.referrer)

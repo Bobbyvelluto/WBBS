@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ tess[1]|upper }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>{{ tess[1]|upper }}</h1>
+    <div class="moduli">
+        {% for m in moduli %}
+            {% if m[2] == "annullato" %}
+                <div class="modulo annullato">X</div>
+            {% else %}
+                <form action="{{ url_for('annulla_modulo', modulo_id=m[0]) }}" method="post" style="display:inline;">
+                    <button type="submit">{{ m[1] }}</button>
+                </form>
+            {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,200 @@
+body {
+  background: #000;
+  color: #f5f5f5;
+  font-family: "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+
+a {
+  color: #16d462;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+th, td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #444;
+  text-align: left;
+}
+th {
+  background-color: #111;
+  color: #fff;
+}
+tr:nth-child(even) {
+  background-color: #111;
+}
+tr:nth-child(odd) {
+  background-color: #181818;
+}
+
+button,
+.crea-btn,
+.elimina-btn {
+  background-color: #16d462;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+button:hover,
+.crea-btn:hover {
+  background-color: #0f9b4f;
+  color: #fff;
+}
+
+.elimina-btn {
+  background-color: #ff4141;
+}
+.elimina-btn:hover {
+  background-color: #bb0000;
+  color: #fff;
+}
+
+h2 {
+  margin-top: 2rem;
+  color: #e65100;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.3rem;
+}
+
+input[type="text"],
+select {
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+/* 📱 Responsive fix per mobile (copialink ed elimina) */
+@media screen and (max-width: 600px) {
+  .copia-btn,
+  .elimina-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+    margin: 0 0.2rem;
+  }
+}
+
+/* 📱 Dashboard Mobile Fix */
+@media screen and (max-width: 600px) {
+  .azioni a {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+    margin: 0.1rem;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .azioni {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 90%;
+  }
+}
+
+/* 🎛️ Gestisci / QR bottoni */
+.gestisci-btn,
+.qr-btn {
+  background-color: #2e2e2e;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+/* 🎨 Bottoni Gestisci e QR in arancio */
+.gestisci-btn,
+.qr-btn {
+  background-color: #2e2e2e;
+  color: #f57c00;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+/* Bottoni arancioni eleganti */
+.gestisci-btn,
+.qr-btn {
+  background-color: #2b2b2b;
+  color: #f57c00;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+@font-face {
+  font-family: 'FrontPageNeuve';
+  src: url('/static/fonts/FrontPageNeuve.ttf') format('truetype');
+}
+
+.studente-nome {
+  font-family: 'FrontPageNeuve', sans-serif;
+  color: #00cc66;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .azioni {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    gap: 0.2rem;
+  }
+
+  .azioni a {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.3rem;
+    margin: 0 0.1rem;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+}
+
+/* Centratura nome e moduli + posizionamento più in basso */
+
+.tesserino-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 90vh;
+  padding-bottom: 2rem;
+}
+
+.studente-nome {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.moduli {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}

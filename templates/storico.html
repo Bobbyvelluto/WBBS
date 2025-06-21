@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Storico lezioni</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>Storico lezioni di {{ nome }}</h2>
+  <table>
+    <thead><tr><th>Modulo</th><th>Stato</th><th>Data</th></tr></thead>
+    <tbody>
+      {% for m in moduli %}
+      <tr>
+        <td>{{ m[0] }}</td>
+        <td>{{ m[1] }}</td>
+        <td>{{ m[2] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br>
+  <a href="{{ url_for('dashboard') }}">🔙 Torna alla Dashboard</a>
+</body>
+</html>

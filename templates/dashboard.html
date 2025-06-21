@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="dashboard">
+  <section class="crea-tesserino">
+    <h2>Crea nuovo Studente</h2>
+    <form action="{{ url_for('crea_tesserino') }}" method="post" style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;">
+      <input type="text" name="nome" placeholder="Nome studente" required>
+      <select name="num_tess" required>
+        <option value="" disabled selected>Numero tesserini</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+      </select>
+      <button type="submit" class="crea-btn">Crea</button>
+    </form>
+  </section>
+
+  <section class="elenco-tesserini">
+    <h2>Elenco Tesserini</h2>
+    <table>
+      <thead>
+        <tr><th>Nome</th><th>Azioni</th></tr>
+      </thead>
+      <tbody>
+        {% for t in tesserini %}
+        <tr>
+          <td>{{ t[1] }}</td>
+          <td style="min-width:300px;">
+            <a href="{{ url_for('tesserino_view', tesserino_id=t[0]) }}" target="_blank" class="gestisci-btn">Gestisci</a>
+            <a href="{{ url_for('tesserino_view', tesserino_id=t[0]) }}" target="_blank" class="qr-btn">QR</a>
+            <input id="link-{{ t[0] }}" type="text" value="{{ url_for('tesserino_view', tesserino_id=t[0], _external=True) }}" readonly onclick="this.select();" style="width:45%; font-size:0.9em;">
+            <button onclick="copyLink('link-{{ t[0] }}', this)" type="button" style="font-size:0.9em;margin-left:0.3em;">Copia link</button>
+            <form action="{{ url_for('elimina_tesserino', tesserino_id=t[0]) }}" method="post" style="display:inline;" onsubmit="return confirm('Eliminare tutto?');">
+              <button type="submit" class="elimina-btn">Elimina</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  <script>
+    function copyLink(id, btn) {
+      const input = document.getElementById(id);
+      input.select();
+      input.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      btn.textContent = "Copiato!";
+      setTimeout(() => btn.textContent = "Copia link", 1200);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+body {
+  background: #000;
+  color: #f5f5f5;
+  font-family: "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+
+a {
+  color: #16d462;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+th, td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #444;
+  text-align: left;
+}
+th {
+  background-color: #111;
+  color: #fff;
+}
+tr:nth-child(even) {
+  background-color: #111;
+}
+tr:nth-child(odd) {
+  background-color: #181818;
+}
+
+button,
+.crea-btn,
+.elimina-btn {
+  background-color: #16d462;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+button:hover,
+.crea-btn:hover {
+  background-color: #0f9b4f;
+  color: #fff;
+}
+
+.elimina-btn {
+  background-color: #ff4141;
+}
+.elimina-btn:hover {
+  background-color: #bb0000;
+  color: #fff;
+}
+
+h2 {
+  margin-top: 2rem;
+  color: #e65100;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.3rem;
+}
+
+input[type="text"],
+select {
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+/* 📱 Responsive fix per mobile (copialink ed elimina) */
+@media screen and (max-width: 600px) {
+  .copia-btn,
+  .elimina-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+    margin: 0 0.2rem;
+  }
+}
+
+/* 📱 Dashboard Mobile Fix */
+@media screen and (max-width: 600px) {
+  .azioni a {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+    margin: 0.1rem;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .azioni {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 90%;
+  }
+}
