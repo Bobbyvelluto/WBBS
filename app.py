@@ -75,6 +75,3 @@ def toggle_modulo(modulo_id):
 def index():
     return redirect('/dashboard')
 
-@app.route('/dashboard')
-def dashboard():
-    return render_template('dashboard.html')
