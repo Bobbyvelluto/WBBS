@@ -64,6 +64,11 @@ if __name__ == "__main__":
 
 
 @app.route("/toggle_modulo/<int:modulo_id>", methods=["POST"])
+
+# Funzione temporanea — da sostituire con la logica reale
+def ottieni_stato(modulo_id):
+    return "attivo"
+
 def toggle_modulo(modulo_id):
     # TODO: personalizza queste due funzioni in base alla tua logica dati
     stato_attuale = ottieni_stato(modulo_id)
