@@ -63,7 +63,7 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 
-@app.route("/toggle_modulo/<int:modulo_id>", methods=["POST"])
+@app.route("/toggle_modulo/<int:modulo_id>", methods=["POST"], endpoint=x27toggle_modulox27)
 
 # Funzione temporanea — da sostituire con la logica reale
 def ottieni_stato(modulo_id):
