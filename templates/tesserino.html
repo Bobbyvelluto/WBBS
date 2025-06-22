@@ -76,6 +76,7 @@
   <div class="contenitore">
     <div class="moduli">
       {% for m in moduli %}
+{% if m[3] != 'annullato' %}
         {% if m[2] == "annullato" %}
           <div class="modulo annullato">X</div>
         {% else %}
@@ -83,6 +84,7 @@
             <button type="submit" class="modulo">{{ m[1] }}</button>
           </form>
         {% endif %}
+{% endif %}
       {% endfor %}
     </div>
     <div class="studente-nome">{{ tess[1]|upper }}</div>
