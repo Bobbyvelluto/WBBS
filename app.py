@@ -90,3 +90,15 @@ def toggle_modulo(modulo_id):
     # ✅ Placeholder di sopravvivenza. Inserisci qui la tua logica reale
     print(f"[DEBUG] toggle_modulo per id={modulo_id}")
     return redirect(request.referrer or url_for('dashboard'))
+
+@app.route('/qr')
+def qr():
+    import qrcode
+    import io
+    from flask import send_file
+
+    img = qrcode.make("https://wbbs.onrender.com/dashboard")
+    buf = io.BytesIO()
+    img.save(buf, format='PNG')
+    buf.seek(0)
+    return send_file(buf, mimetype='image/png')
